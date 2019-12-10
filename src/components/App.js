@@ -6,7 +6,12 @@ import reducer from "../reducers";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
-  const [state, dispatch] = useReducer(reducer, []);
+  const initialState = {
+    events: [],
+    operationLogs: []
+  };
+
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <AppContenxt.Provider value={{ state, dispatch }}>
